@@ -34,7 +34,6 @@ class DB(object):
             self.post["captcha-id"] = ids[0]
             self.post["user_login"] = "登录"
             self.post["redir"] = 'http://www.douban.com/doumail/'
-            self.response = self.opener.open(self.url, urllib.urlencode(self.post))
             if self.response.geturl() == "http://www.douban.com/doumail/":
                 print 'login success !'
                 soup = BeautifulSoup(self.response.read())
